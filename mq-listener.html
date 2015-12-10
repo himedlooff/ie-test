@@ -9,23 +9,18 @@
 
 <script>
 	function mqTest() {
-		var mqMobile = window.msMatchMedia("screen (max-width: 414px) and (orientation: portrait)");
-		var mqMobileLandscape = window.msMatchMedia("screen and (min-width: 415px) and (max-width: 667px) and (orientation: landscape)");
-		var mqTabletPortrait = window.msMatchMedia("screen and (min-width: 668px) and (max-width: 800px) and (orientation: portrait)");
-		var mqDesktop = window.msMatchMedia("screen and (min-width: 801px)");
-		mqMobile.addListener(sizeChange);
-		mqMobileLandscape.addListener(sizeChange);
-		mqTabletPortrait.addListener(sizeChange);
-		mqDesktop.addListener(sizeChange);
-		function sizeChange(mql) {
-			console.log(mql.media, mql.matches);
-		}
+		var mqMobile = window.matchMedia("screen (max-width: 414px) and (orientation: portrait)");
+		var mqMobileLandscape = window.matchMedia("screen and (min-width: 415px) and (max-width: 667px) and (orientation: landscape)");
+		var mqTabletPortrait = window.matchMedia("screen and (min-width: 668px) and (max-width: 800px) and (orientation: portrait)");
+		var mqDesktop = window.matchMedia("screen and (min-width: 801px)");
+		return 'mqMobile: ' + mqMobile.matches + '\n' +
+			   'mqMobileLandscape: ' + mqMobileLandscape.matches + '\n' +
+			   'mqTabletPortrait: ' + mqTabletPortrait.matches + '\n' +
+			   'mqDesktop: ' + mqDesktop.matches;
 	}
-	console.log('on load');
-	mqTest();
+	console.log('on load', mqTest());
 	setTimeout(function() {
-		console.log('on timeout');
-		mqTest();
+		console.log('on timeout', mqTest());
 	}, 100);
 </script>
 
