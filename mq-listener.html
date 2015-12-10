@@ -8,14 +8,14 @@
 
 <script>
 	function mqTest() {
-		var mqMobile = window.matchMedia("screen (max-width: 414px) and (orientation: portrait)");
-		var mqMobileLandscape = window.matchMedia("screen and (min-width: 415px) and (max-width: 667px) and (orientation: landscape)");
-		var mqTabletPortrait = window.matchMedia("screen and (min-width: 668px) and (max-width: 800px) and (orientation: portrait)");
-		var mqDesktop = window.matchMedia("screen and (min-width: 801px)");
-		return 'mqMobile: ' + mqMobile.matches + '\n' +
-			   'mqMobileLandscape: ' + mqMobileLandscape.matches + '\n' +
-			   'mqTabletPortrait: ' + mqTabletPortrait.matches + '\n' +
-			   'mqDesktop: ' + mqDesktop.matches;
+		var mqMobile = "screen (max-width: 414px) and (orientation: portrait)";
+		var mqMobileLandscape = "screen and (min-width: 415px) and (max-width: 667px) and (orientation: landscape)";
+		var mqTabletPortrait = "screen and (min-width: 668px) and (max-width: 800px) and (orientation: portrait)";
+		var mqDesktop = "screen and (min-width: 801px)";
+		return mqMobile + window.matchMedia(mqMobile).matches + '\n' +
+			   mqMobileLandscape + window.matchMedia(mqMobileLandscape).matches + '\n' +
+			   mqTabletPortrait + window.matchMedia(mqTabletPortrait).matches + '\n' +
+			   mqDesktop + window.matchMedia(mqDesktop).matches;
 	}
 	console.log('on load\n', mqTest());
 	setTimeout(function() {
