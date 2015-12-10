@@ -13,6 +13,10 @@
 		var mqMobileLandscape = window.msMatchMedia("screen and (min-width: 415px) and (max-width: 667px) and (orientation: landscape)");
 		var mqTabletPortrait = window.msMatchMedia("screen and (min-width: 668px) and (max-width: 800px) and (orientation: portrait)");
 		var mqDesktop = window.msMatchMedia("screen and (min-width: 801px)");
+		return 'mqMobile: ' + mqMobile + '\n' +
+			   'mqMobileLandscape: ' + mqMobileLandscape + '\n' +
+			   'mqTabletPortrait: ' + mqTabletPortrait + '\n' +
+			   'mqDesktop: ' + mqDesktop;
 	}
 	console.log('on load', mqTest());
 	setTimeout(function() {
