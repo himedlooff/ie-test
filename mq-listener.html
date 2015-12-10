@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<script>
+	function mqTest() {
+		var mqMobile = window.msMatchMedia("screen (max-width: 414px) and (orientation: portrait)");
+		var mqMobileLandscape = window.msMatchMedia("screen and (min-width: 415px) and (max-width: 667px) and (orientation: landscape)");
+		var mqTabletPortrait = window.msMatchMedia("screen and (min-width: 668px) and (max-width: 800px) and (orientation: portrait)");
+		var mqDesktop = window.msMatchMedia("screen and (min-width: 801px)");
+	}
+	console.log('on load', mqTest());
+	setTimeout(function() {
+		console.log('on timeout', mqTest());
+	}, 100);
+</script>
+
+</body>
+</html>
